@@ -6,6 +6,9 @@ from .forms import TaskForm
 
 # Create your views here.
 
+def home(request):
+    return render(request, 'todo/home.html')
+
 # List all tasks
 class TaskListView(ListView):
     model = Task

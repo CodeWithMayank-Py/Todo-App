@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from todo.views import home  # Import the home view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/', include('todo.urls')),
+    path('', home, name='home'),  # This makes the home view accessible at /
+    path('todo/', include('todo.urls')),  # This keeps all todo app URLs under /todo/
 ]
